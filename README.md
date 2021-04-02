@@ -29,7 +29,7 @@ Response headers:
 You'll obtain a binary named `wsv`.
 
 ## Usage
-`$> wsv /path/to/file.conf`
+`$> ./wsv /path/to/file.conf`
 
 ## Configuration
 
