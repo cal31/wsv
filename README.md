@@ -36,40 +36,40 @@ You'll obtain a binary named `wsv`.
 Example
 ```
 server {
-	listen [::]:8080;
+    listen [::]:8080;
 
-	server_name wsv;
+    server_name wsv;
 
-	error_page 404 /404.html;
+    error_page 404 /404.html;
 
-	location /www/ {
-		index index.html;
-		client_max_body_size 40;
-		limit_except GET HEAD PUT DELETE OPTIONS TRACE {
-			deny all;
-		}
-	}
+    location /www/ {
+        index index.html;
+        client_max_body_size 40;
+        limit_except GET HEAD PUT DELETE OPTIONS TRACE {
+            deny all;
+        }
+    }
 
-	location / {
-		root /tmp/;
-		autoindex on;
-		limit_except GET HEAD {
-			deny all;
-		}
-	}
+    location / {
+        root /tmp/;
+        autoindex on;
+        limit_except GET HEAD {
+            deny all;
+        }
+    }
 }
 
 server {
-	listen [::]:8080;
+    listen [::]:8080;
 
-	server_name localhost:8080;
+    server_name localhost:8080;
 
-	location /public/ {
-		index index.html;
-		limit_except GET PUT POST {
-			deny all;
-		}
-	}
+    location /public/ {
+        index index.html;
+        limit_except GET PUT POST {
+            deny all;
+        }
+    }
 }
 ```
 
@@ -84,8 +84,8 @@ You can specify multiple `server` block.
     Tell the server how to handle request for the specified request target.
     - `index` :
         File to be served if no file was specified in the request target.
-	- `autoindex`:
-		"on" or "off". Creates directory listing if enabled.
+    - `autoindex`:
+        "on" or "off". Creates directory listing if enabled.
     - `root` :
         Directory path prefixed to the request target.
         Defaults to the binary current directory.
