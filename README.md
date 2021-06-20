@@ -75,7 +75,7 @@ server {
 
 You can specify multiple `server` block.
 - `listen` :
-    Ipv6 address.
+    IPv6 address.
 - `server_name` :
     White-space delimited string.
 - `error_page` :
